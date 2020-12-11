@@ -16,7 +16,7 @@ public class month_generator {
 		System.out.println("[3] MARCH        [9] SEPTEMBER");
 		System.out.println("[4] APRIL        [10] OCTOBER");
 		System.out.println("[5] MAY          [11] NOVEMBER");
-		System.out.println("[6] JUNE         [11] DECEMBER");
+		System.out.println("[6] JUNE         [12] DECEMBER");
 		System.out.print("Enter you choice: ");
 		int month  = input.nextInt();
 		
@@ -34,15 +34,16 @@ public class month_generator {
 		int monthcode = month_code(month-1);
 		int centcode = cent_code(year);
 		int daycode = (yearcode+monthcode+centcode+1-leap_year)%7;
+		System.out.println(daycode);
 		
 		System.out.println("SU   MO   TU   WE   TH   FR   SA");
 		if(month == 2) {
 			if(leap_year == 1) {
-				month_print(30, daycode+1);
+				month_print(29, daycode+1);
 			}else {
 				month_print(30, daycode+1);
 			}
-		}else if(month%2 == 0 || month == 7) {
+		}else if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 9 || month == 12) {
 			month_print(31, daycode+1);
 		}else {
 			month_print(30, daycode+1);
@@ -53,7 +54,7 @@ public class month_generator {
 		int ctr = 1, days = 1, j =1, row =1;
 		
 		for(int i = 0; i<row; i++) {
-			for(; j!=total_days; j++) {
+			while(j!=total_days+day) {
 				if(day>j) {
 					System.out.print("     ");
 				}else {
@@ -64,6 +65,7 @@ public class month_generator {
 					}
 					days++;
 				}
+				j++;
 				ctr++;
 				if(ctr==8) {
 					break;

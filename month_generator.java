@@ -10,12 +10,14 @@ public class month_generator {
 		System.out.print("Enter year: ");
 		int year = input.nextInt();
 		
-		int last = year%100;
-		int yearcode = (last+(last/4))%7;
-		System.out.print(yearcode);
-		
+		int yearcode = year_code(year);
 		int leap_year = leap(year);
-
+		
+	}
+	
+	public static int year_code(int year) {
+		int last = year%100;
+		return (last+(last/4))%7;
 	}
 	
 	public static int leap(int year) {

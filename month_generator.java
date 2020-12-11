@@ -10,6 +10,16 @@ public class month_generator {
 		System.out.print("Enter year: ");
 		int year = input.nextInt();
 		
+		System.out.println("Select a month: ");
+		System.out.println("[1] JANUARAY     [7] JULY");
+		System.out.println("[2] FEBRUARY     [8] AUGUST");
+		System.out.println("[3] MARCH        [9] SEPTEMBER");
+		System.out.println("[4] APRIL        [10] OCTOBER");
+		System.out.println("[5] MAY          [11] NOVEMBER");
+		System.out.println("[6] JUNE         [11] DECEMBER");
+		System.out.print("Enter you choice: ");
+		int month  = input.nextInt();
+		
 		int yearcode = year_code(year);
 		int leap_year = leap(year);
 		
